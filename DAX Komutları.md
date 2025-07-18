@@ -2,7 +2,7 @@
 
 Bu dosya, Power BI projesinde kullanılan ölçü ve sütun oluşturmak için kullanılan DAX komutlarını içermektedir.
 
-## Sütun oluşturmak için kullanılan DAX Komutları
+### Sütun oluşturmak için kullanılan DAX Komutları
 
 ## 1. AD Sütunu 
 ```DAX
