@@ -3,9 +3,8 @@
 Bu dosya, Power BI projesinde kullanılan ölçü ve sütun oluşturmak için kullanılan DAX komutlarını içermektedir.
 
 ## Sütun oluşturmak için kullanılan DAX Komutları
----
 
-## 🔢 15. AD Sütunu 
+## 1. AD Sütunu 
 ```DAX
 AD = 
 VAR TamAd = 'Kullanıcılar'[NAMESURNAME]
@@ -19,7 +18,7 @@ RETURN
     )
 ```
 
-## 🔢 16. SOYAD Sütunu 
+## 2. SOYAD Sütunu 
 ```DAX
 SOYAD = 
 VAR TamAd = 'Kullanıcılar'[NAMESURNAME]
