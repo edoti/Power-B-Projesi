@@ -2,8 +2,122 @@
 
 Bu dosya, Power BI projesinde kullanılan ölçü ve sütun oluşturmak için kullanılan DAX komutlarını içermektedir.
 
+## Sütun oluşturmak için kullanılan DAX Komutları
 ---
 
+## 🔢 15. AD Sütunu 
+```DAX
+AD = 
+VAR TamAd = 'Kullanıcılar'[NAMESURNAME]
+VAR BoslukSayisi = LEN(TamAd) - LEN(SUBSTITUTE(TamAd, " ", ""))
+VAR SonBoslukYeri = FIND("¤", SUBSTITUTE(TamAd, " ", "¤", BoslukSayisi), 1)
+RETURN 
+    IF(
+        BoslukSayisi = 0,
+        BLANK(),
+        LEFT(TamAd, SonBoslukYeri - 1)
+    )
+```
+
+## 🔢 16. SOYAD Sütunu 
+```DAX
+SOYAD = 
+VAR TamAd = 'Kullanıcılar'[NAMESURNAME]
+VAR BoslukSayisi = LEN(TamAd) - LEN(SUBSTITUTE(TamAd, " ", ""))
+VAR SonBoslukYeri = FIND("¤", SUBSTITUTE(TamAd, " ", "¤", BoslukSayisi), 1)
+RETURN 
+    IF(
+        BoslukSayisi = 0,
+        TamAd,
+        MID(TamAd, SonBoslukYeri + 1, LEN(TamAd))
+    )
+```
+
+## 🔢 17. CİNSİYET Sütunu 
+```DAX
+CİNSİYET = SWITCH(TRUE(), 'Kullanıcılar'[GENDER] = "E", "ERKEK", 'Kullanıcılar'[GENDER] = "K" ,"KADIN")
+```
+
+## 🔢 18. KULLANICI_ŞEHİR Sütunu 
+```DAX
+KULLANICI_ŞEHİR = FORMAT(Adres[USERID],"0") & "-" & Adres[ŞEHİR]
+```
+
+## 🔢 19. YAS Sütunu 
+```DAX
+YAS = DATEDIFF('Kullanıcılar'[BIRTHDATE], TODAY(),YEAR)
+```
+
+## 🔢 13. YAS_GRUBU (Sütun oluşturma)
+```DAX
+YAS_GRUBU = 
+SWITCH(
+    TRUE(),
+    'Kullanıcılar'[YAS] <= 20, "Genç",
+    'Kullanıcılar'[YAS] <= 35, "Yetişkin",
+    'Kullanıcılar'[YAS] <= 55, "Orta Yaş",
+    "Yaşlı"
+)
+```
+
+## 🔢 2. PASSWORD Sütunu 
+```DAX
+PASSWORD = UPPER('Kullanıcılar'[PASSWORD_])
+```
+
+## 🔢 2. KULLANICI_ŞEHİR Sütunu 
+```DAX
+
+```
+## 🔢 2. KULLANICI_ŞEHİR Sütunu 
+```DAX
+
+```
+
+## 🔢 17. BOLGEAD_  Sütunu 
+```DAX
+BOLGEAD_ = UPPER('Bölgeler'[BolgeAd])
+```
+
+## 🔢 2. HİÇİ_HSONU  Sütunu 
+```DAX
+HİÇİ_HSONU = 
+VAR Gun = WEEKDAY('Sipariş'[DATE], 2) -- Pazartesi=1, Pazar=7
+RETURN IF(Gun <= 5, "Haftaiçi", "Haftasonu")
+```
+
+## 🔢 2. SAAT Sütunu 
+```DAX
+SAAT = HOUR('Sipariş'[DATE_])
+```
+
+## 🔢 2. SEHİR_AD Sütunu 
+```DAX
+SEHİR_AD = UPPER('Şehirler'[SehirAd])
+```
+
+## 🔢 2. YENIANAKATEGORI Sütunu 
+```DAX
+YENIANAKATEGORI = 
+SWITCH(
+    TRUE(),
+    'Ürünler'[ANAKATEGORI] = "SOGUK ICECEKLER", "ICECEKLER",
+    'Ürünler'[ANAKATEGORI] = "CAY-KAHVE-SEKER", "ICECEKLER",
+    'Ürünler'[ANAKATEGORI] = "SICAK ICECEKLER", "ICECEKLER",
+    'Ürünler'[ANAKATEGORI]  // Diğerleri orijinal hâliyle
+)
+
+```
+
+
+
+
+---
+
+
+
+## Ölçü oluşturmak için kullanılan DAX Komutları
+---
 ## 🔢 1. Toplam Satış - ÖLÇÜ
 ```DAX
 Toplam Satış = SUM('Sipariş_Detay'[AMOUNT])
@@ -139,17 +253,7 @@ CALCULATE(
 )
 ```
 
-## 🔢 13. Yaş Grubu (Sütun oluşturma)
-```DAX
-Yaş Grubu = 
-SWITCH(
-    TRUE(),
-    'Kullanıcılar'[YAS] <= 20, "Genç",
-    'Kullanıcılar'[YAS] <= 35, "Yetişkin",
-    'Kullanıcılar'[YAS] <= 55, "Orta Yaş",
-    "Yaşlı"
-)
-```
+
 
 ## 🔢 14. Pantene İstanbul Genç Ciro - ÖLÇÜ
 ```DAX
@@ -174,9 +278,7 @@ CALCULATE(
 )
 ```
 
-## 🔢 2. Toplam Kazanç  
-```DAX
 
-```
+---
 
 
