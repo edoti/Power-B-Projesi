@@ -13,7 +13,8 @@
 | `DAX Komutları.md`             | Verilerin analiz edilmesi için kullandığım komutlar |
 | `PowerBI Projesi Sunumu.pdf`   | Projeye ait rapor çıktısı |
 | `CSV Dosyaları`                | Projede kullanılan CSV dosyaları |
-| `README.md`                    | Bu dosya 😎 |
+| `README.md`                    | Bu dosya 😎 |  
+  
 
 ## Şehirler ve Bölgeler için kullandığım dosyaya buradan ulaşabilirsiniz:  
 https://github.com/yigith/TurkiyeSehirlerBolgeler/blob/master/excel/SehirlerBolgeler.xlsx
@@ -29,16 +30,17 @@ Projede 8 ana tabloya yönelik veri hazırlama adımları gerçekleştirilmişti
 
 Modelleme adımlarında tablolar arasında ilişkilendirme ve kullanıcıya görünmemesi gereken alanların gizlenmesi sağlanmıştır.
 
----
+
 ## Seçilen Marka  
 - PANTENE
----
+
+
 ## 📊 Oluşturulan Raporlar
 Raporlama kısmı seçilen markaya göre 3 temel perspektife göre yapılmıştır:
 - **📌 Özet Sayfa**: Satış adetleri, ciro, haftasonu-haftaiçi karşılaştırmaları, saatlik analizler vb.
 - **👥 Müşteri Perspektifi**: Yaşa ve cinsiyete göre müşteri sayısı.
 - **📦 Kategori Perspektifi**: Yaş gruplarına göre müşterilerin İstanbul'daki toplam cirosunun kategoriye göre dağılımı.
 
----
+
 
 
