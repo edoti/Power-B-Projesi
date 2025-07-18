@@ -20,7 +20,7 @@
 https://github.com/yigith/TurkiyeSehirlerBolgeler/blob/master/excel/SehirlerBolgeler.xlsx
 
 
-## 🔧 Uygulanan Dönüşümler ve İşlemler
+## Uygulanan Dönüşümler ve İşlemler
 Projede 8 ana tabloya yönelik veri hazırlama adımları gerçekleştirilmiştir:
 -**Users (Kullanıcılar) Tablosu**: Yaş hesaplama, cinsiyet sınıflandırması, ad-soyad ayrımı, gereksiz kolonların kaldırılması, gizleme işlemleri yapılmıştır.
 - **Adres Tablosu**: USERID ve CITY alanları birleştirilmiş, kolon adlandırmaları güncellenmiştir.
@@ -35,7 +35,7 @@ Modelleme adımlarında tablolar arasında ilişkilendirme ve kullanıcıya gör
 - PANTENE
 
 
-## 📊 Oluşturulan Raporlar
+## Oluşturulan Raporlar
 Raporlama kısmı seçilen markaya göre 3 temel perspektife göre yapılmıştır:
 - **📌 Özet Sayfa**: Satış adetleri, ciro, haftasonu-haftaiçi karşılaştırmaları, saatlik analizler vb.
 - **👥 Müşteri Perspektifi**: Yaşa ve cinsiyete göre müşteri sayısı.
